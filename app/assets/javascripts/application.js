@@ -20,6 +20,7 @@
 
 
 $( document ).on('turbolinks:load',function(){
-$(".dropdown-trigger").dropdown();   
+$(".dropdown-trigger").dropdown(); 
+$('.sidenav').sidenav();  
 })       
 
