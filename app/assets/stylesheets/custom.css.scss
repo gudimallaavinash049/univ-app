@@ -1,0 +1,31 @@
+@import "materialize";
+.ilike-blue-container {
+    @extend .blue, .lighten-4;
+  }
+
+.navbar-color {
+    background-color: black;
+}
+.dim{
+    width:"42"; 
+    height:"42";
+}
+.css-background{
+    background-color:#424242;
+    text-decoration-color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  .photo {
+    border-radius: 50%;
+  }
+  
