@@ -42,8 +42,14 @@
             </a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="#">Signup</a></li>
-              <li><a href="#">Login</a></li>
+            <% if student_signed_in? %>
+              <li><%= image_tag("2.png", :alt => "rss feed", :class =>"icon",style:"height:50px ; width: 80px;") %></li>
+              <li><a href="/profile/:id">Profile</a></li>
+              <li><%= link_to 'Logout',destroy_student_session_path, method: "delete" %></li>
+            <% else %>  
+              <li><a href="/students/sign_up">Signup</a></li>
+              <li><a href="/students/sign_in">Login</a></li>
+            <% end %>  
               <li><a href="#">Results</a></li>
               <li><a href="#">Time Table</a></li>
               <li><a href="#">Digital Library</a></li>
@@ -55,8 +61,8 @@
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-          <li><a href="#">Signup</a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="/students/sign_up">Signup</a></li>
+          <li><a href="/students/sign_in">Login</a></li>
           <li><a href="#">Results</a></li>
           <li><a href="#">Time Table</a></li>
           <li><a href="#">Digital Library</a></li>
@@ -67,6 +73,7 @@
       </div>       
       </header>
     <main>
+    
       <div class="container " >
           <%= yield %>
       <div>

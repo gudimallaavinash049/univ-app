@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :students
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'course#index'
+  root to: 'auth#index'
   get 'about', to:'pages#about'
-  get 'new', to: 'course#new'
+  get 'profile(/:id)', to:'pages#profile'
+  post 'profile',to:'pages#create'
+ 
 end
